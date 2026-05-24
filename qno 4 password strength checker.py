@@ -9,7 +9,7 @@ has_special = False
 special_characters = "!@#$%^&*"
 
 for char in password:
-     if char.isupper():
+    if char.isupper():
         has_upper = True
     if char.islower():
         has_lower = True
@@ -32,7 +32,7 @@ if not has_special:
 
 print("\nPassword:", password)
 if len(missing) == 0:
-       print("Result  : Strong Password")
+    print("Result  : Strong Password")
 else:
     print("Result  : Weak Password")
     print("Missing :", ", ".join(missing))
