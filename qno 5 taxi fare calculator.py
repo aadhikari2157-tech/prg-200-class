@@ -21,3 +21,7 @@ for trip in trips:
     if hour >= 22 or hour < 5:
         fare = fare * 1.10
         night = "Yes"
+     else:
+        night = "No"
+    
+    
