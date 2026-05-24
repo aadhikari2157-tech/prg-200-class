@@ -1,0 +1,1 @@
+purchase = float(input("Enter total purchase amount (NPR): "))
