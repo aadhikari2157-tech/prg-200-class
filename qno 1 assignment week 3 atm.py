@@ -13,4 +13,5 @@ elif amount > balance:
 else:
     balance = balance - amount
     print("Withdrawal successful.")
+ print("Your current balance after withdrawal: NPR", balance)
 
