@@ -5,7 +5,7 @@ trips = [
     {"distance": 8.5, "hour": 10},
     {"distance": 2.0, "hour": 23},
 ]
-print("--- Taxi Fare Calculator ---")
+print("- Taxi Fare Calculator -")
 
 for trip in trips:
     distance = trip["distance"]
