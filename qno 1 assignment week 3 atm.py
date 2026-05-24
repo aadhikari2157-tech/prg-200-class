@@ -10,4 +10,7 @@ elif amount > balance:
      print("Insufficient balance.")
      elif daily_withdrawn + amount > daily_limit:
     print("Daily withdrawal limit reached.")
+else:
+    balance = balance - amount
+    print("Withdrawal successful.")
 
