@@ -9,3 +9,6 @@ inventory = [
 restock_count = 0
 
 print("--- Inventory Restock Report ---")
+for item in inventory:
+    if item["stock"] < item["threshold"]:
+        
