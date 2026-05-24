@@ -1,0 +1,1 @@
+balance = float(input("Enter your account balance (NPR): "))
