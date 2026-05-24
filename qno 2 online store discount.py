@@ -8,3 +8,7 @@ elif purchase < 15000:
     discount = 10
 else:
     discount = 20
+discounted_amount = purchase * (1 - discount / 100)
+if is_member.lower() == "yes" and discount > 0:
+     final_amount = discounted_amount * (1 - 5 / 100)
+     
