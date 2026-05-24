@@ -15,4 +15,6 @@ for trip in trips:
         fare = 150
     elif distance <= 10:
         fare = 150 + (distance - 2) * 35
+     else:
+        fare = 150 + (8 * 35) + (distance - 10) * 28
         
