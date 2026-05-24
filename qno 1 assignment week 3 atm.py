@@ -8,3 +8,5 @@ balance = float(input("Enter your account balance (NPR): "))
 daily_limit = 50000
 
 if amount % 500 != 0:
+    print("Invalid amount. Must be a multiple of NPR 500.")
+elif amount > balance:
