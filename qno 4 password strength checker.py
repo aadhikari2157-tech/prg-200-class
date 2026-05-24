@@ -32,3 +32,7 @@ if not has_special:
 
 print("\nPassword:", password)
 if len(missing) == 0:
+       print("Result  : Strong Password")
+else:
+    print("Result  : Weak Password")
+    print("Missing :", ", ".join(missing))
