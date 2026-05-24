@@ -17,4 +17,15 @@ for char in password:
         has_digit = True
     if char in special_characters:
         has_special = True
-        
+missing = []
+
+if len(password) < 8:
+    missing.append("at least 8 characters")
+if not has_upper:
+    missing.append("uppercase letter")
+if not has_lower:
+    missing.append("lowercase letter")
+if not has_digit:
+    missing.append("digit")
+if not has_special:
+    missing.append("special character (!@#$%^&*)")
