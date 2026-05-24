@@ -27,4 +27,4 @@ for trip in trips:
     print("\nDistance       :", distance, "km")
     print("Hour           :", hour)
     print("Night Surcharge:", night)
-    
+    print("Fare           : NPR", round(fare, 2))
