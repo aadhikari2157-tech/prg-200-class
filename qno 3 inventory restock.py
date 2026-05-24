@@ -13,4 +13,6 @@ for item in inventory:
     if item["stock"] < item["threshold"]:
          print("Restock Alert:", item["item"], "| Stock:", item["stock"], "| Threshold:", item["threshold"])
         restock_count = restock_count + 1
+print("\nTotal items needing restock:", restock_count)
+
     
