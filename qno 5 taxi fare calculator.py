@@ -8,3 +8,5 @@ trips = [
 print("--- Taxi Fare Calculator ---")
 
 for trip in trips:
+    distance = trip["distance"]
+    hour = trip["hour"]
