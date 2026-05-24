@@ -17,4 +17,7 @@ for trip in trips:
         fare = 150 + (distance - 2) * 35
      else:
         fare = 150 + (8 * 35) + (distance - 10) * 28
-        
+    
+    if hour >= 22 or hour < 5:
+        fare = fare * 1.10
+        night = "Yes"
