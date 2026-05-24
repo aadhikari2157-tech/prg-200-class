@@ -8,3 +8,6 @@ if amount % 500 != 0:
     print("Invalid amount. Must be a multiple of NPR 500.")
 elif amount > balance:
      print("Insufficient balance.")
+     elif daily_withdrawn + amount > daily_limit:
+    print("Daily withdrawal limit reached.")
+
