@@ -15,3 +15,8 @@ if is_member.lower() == "yes" and discount > 0:
     print("Purchase Discount    :", discount, "%")
     print("Loyalty Discount     : 5%")
     print("Final Payable        : NPR", round(final_amount, 2))
+else:
+    final_amount = discounted_amount
+    print("Purchase Amount      : NPR", purchase)
+    print("Purchase Discount    :", discount, "%")
+    print("Final Payable        : NPR", round(final_amount, 2))
