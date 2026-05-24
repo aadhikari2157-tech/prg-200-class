@@ -24,4 +24,5 @@ for trip in trips:
      else:
         night = "No"
     
+     print("\nDistance       :", distance, "km")
     
