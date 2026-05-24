@@ -29,3 +29,6 @@ if not has_digit:
     missing.append("digit")
 if not has_special:
     missing.append("special character (!@#$%^&*)")
+
+print("\nPassword:", password)
+if len(missing) == 0:
