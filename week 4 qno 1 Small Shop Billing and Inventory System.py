@@ -18,21 +18,20 @@ def process_order(inventory, cart):
 
     for item, qty in cart.items():
         if item in inventory:
-             if inventory[item]["stock"] >= qty:
-                 cost = inventory[item]["price"] * qty
-        total += cost
-                
-        inventory[item]["stock"] -= qty
-        print(f"{item} x{qty} = NPR {cost}")
-    else:
-        print(f"Sorry, not enough stock for {item}")
+            if inventory[item]["stock"] >= qty:
+                cost = inventory[item]["price"] * qty
+                total += cost
+                inventory[item]["stock"] -= qty
+                print(f"{item} x{qty} = NPR {cost}")
+            else:
+                print(f"Sorry, not enough stock for {item}")
 
-print(f"Grand Total: NPR {total}")
-print("--------------")
+    print(f"Grand Total: NPR {total}")
+    print("--------------")
 
-print("Updated Stock:")
-for item in inventory:
-    print(f"{item} = {inventory[item]['stock']}")
+    print("Updated Stock:")
+    for item in inventory:
+        print(f"{item} = {inventory[item]['stock']}")
 
 process_order(inventory, cart)
 
