@@ -15,3 +15,8 @@ def convert_date(date_str, from_cal, to_cal):
 
     if from_cal == to_cal:
         return date_str
+    
+    if from_cal == "AD" and to_cal == "BS":
+        year += 56
+    elif from_cal == "BS" and to_cal == "AD":
+        year -= 56
