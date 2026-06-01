@@ -13,5 +13,8 @@ def atm(account_id, pin, action, amount=0):
     
     account = accounts[account_id]
 
+    if account["pin"] != pin:
+        print("Incorrect PIN")
+        return
     
 
