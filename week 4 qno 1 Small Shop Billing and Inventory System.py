@@ -4,3 +4,9 @@ inventory = {
     "bread": {"price": 60, "stock": 15},
     "eggs": {"price": 15, "stock": 30}
 }
+
+cart = {
+    "rice": 2,
+    "milk": 3,
+    "eggs": 12
+}
