@@ -30,3 +30,6 @@ def process_order(inventory, cart):
 print(f"Grand Total: NPR {total}")
 print("--------------")
 
+print("Updated Stock:")
+for item in inventory:
+    
