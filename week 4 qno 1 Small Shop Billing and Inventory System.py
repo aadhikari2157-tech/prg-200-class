@@ -18,3 +18,8 @@ def process_order(inventory, cart):
 
     for item, qty in cart.items():
         if item in inventory:
+             if inventory[item]["stock"] >= qty:
+                 cost = inventory[item]["price"] * qty
+        total += cost
+                
+        inventory[item]["stock"] -= qty
