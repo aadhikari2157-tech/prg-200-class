@@ -8,4 +8,5 @@ sensors = [
 
 
 def check_water_level(location, level_metres):
-    
+        if level_metres < 3:
+            return "Safe"
