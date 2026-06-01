@@ -5,3 +5,7 @@ sensors = [
     ("Sunsari Bridge", 1.9),
     ("Saptakoshi Camp", 6.0),
 ]
+
+
+def check_water_level(location, level_metres):
+    
