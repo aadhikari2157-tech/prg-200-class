@@ -10,3 +10,5 @@ sensors = [
 def check_water_level(location, level_metres):
         if level_metres < 3:
             return "Safe"
+        elif level_metres <= 5:
+            return "Warning — Alert nearby villages"
