@@ -23,3 +23,5 @@ def process_order(inventory, cart):
         total += cost
                 
         inventory[item]["stock"] -= qty
+        print(f"{item} x{qty} = NPR {cost}")
+    else:
