@@ -13,3 +13,8 @@ cart = {
 
 def process_order(inventory, cart):
     total = 0
+
+    print("---- Bill ----")
+
+    for item, qty in cart.items():
+        if item in inventory:
