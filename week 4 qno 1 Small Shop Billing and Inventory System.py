@@ -26,3 +26,7 @@ def process_order(inventory, cart):
         print(f"{item} x{qty} = NPR {cost}")
     else:
         print(f"Sorry, not enough stock for {item}")
+
+print(f"Grand Total: NPR {total}")
+print("--------------")
+
