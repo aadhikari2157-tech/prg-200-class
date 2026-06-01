@@ -20,5 +20,11 @@ def atm(account_id, pin, action, amount=0):
         print(f"Name: {account['name']}")
         print(f"Balance: NPR {account['balance']}")
     
+    elif action == "deposit":
+        account["balance"] += amount
+        print(f"Deposit successful.")
+        print(f"New Balance: NPR {account['balance']}")
+    
+    
 
 
