@@ -6,3 +6,8 @@ accounts = {
 
 
 def atm(account_id, pin, action, amount=0):
+
+    if account_id not in accounts:
+        print("Account not found")
+        return
+    
