@@ -16,5 +16,9 @@ def atm(account_id, pin, action, amount=0):
     if account["pin"] != pin:
         print("Incorrect PIN")
         return
+    if action == "balance":
+        print(f"Name: {account['name']}")
+        print(f"Balance: NPR {account['balance']}")
     
+
 
