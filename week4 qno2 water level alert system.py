@@ -14,3 +14,6 @@ def check_water_level(location, level_metres):
             return "Warning — Alert nearby villages"
         else:
             return "DANGER — Evacuate immediately!"
+for location, level in sensors:
+    print(f"{location} ({level} m): {check_water_level(location, level)}")
+    
