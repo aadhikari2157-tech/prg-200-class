@@ -12,3 +12,5 @@ def check_water_level(location, level_metres):
             return "Safe"
         elif level_metres <= 5:
             return "Warning — Alert nearby villages"
+        else:
+            return "DANGER — Evacuate immediately!"
