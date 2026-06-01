@@ -9,3 +9,6 @@ customers = [
     {"name": "Bikash Rai", "date": "1998-11-30", "cal": "AD", "need": "BS", "style": "nepali"},
     {"name": "Anjali Gurung", "date": "2040-01-05", "cal": "BS", "need": "AD", "style": "full"},
 ]
+
+def convert_date(date_str, from_cal, to_cal):
+    year, month, day = map(int, date_str.split("-"))
