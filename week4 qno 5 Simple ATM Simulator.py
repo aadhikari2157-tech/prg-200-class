@@ -33,6 +33,11 @@ def atm(account_id, pin, action, amount=0):
             account["balance"] -= amount
             print(f"Withdrawal successful.")
             print(f"Remaining Balance: NPR {account['balance']}")
-
+            
+atm("A001", "1234", "balance")
+atm("A002", "0000", "withdraw", 2000)
+atm("A002", "5678", "deposit", 3000)
+atm("A003", "9012", "withdraw", 25000)
+atm("A004", "1111", "balance")
 
 
