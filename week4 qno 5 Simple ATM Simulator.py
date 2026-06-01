@@ -25,6 +25,9 @@ def atm(account_id, pin, action, amount=0):
         print(f"Deposit successful.")
         print(f"New Balance: NPR {account['balance']}")
     
+    elif action == "withdraw":
+        if amount > account["balance"]:
+            print("Insufficient funds")
     
 
 
