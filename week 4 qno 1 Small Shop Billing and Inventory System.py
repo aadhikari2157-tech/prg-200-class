@@ -32,4 +32,8 @@ print("--------------")
 
 print("Updated Stock:")
 for item in inventory:
-    
+    print(f"{item} = {inventory[item]['stock']}")
+
+process_order(inventory, cart)
+
+
