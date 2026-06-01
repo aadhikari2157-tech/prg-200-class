@@ -27,3 +27,7 @@ for customer in customers:
         customer["cal"],
         customer["need"]
     )
+
+    print(
+        f"{customer['name']} | Original: {customer['date']} {customer['cal']} | Converted: {converted} {customer['need']}"
+    )
