@@ -28,6 +28,8 @@ def atm(account_id, pin, action, amount=0):
     elif action == "withdraw":
         if amount > account["balance"]:
             print("Insufficient funds")
-    
+
+        else:
+            
 
 
