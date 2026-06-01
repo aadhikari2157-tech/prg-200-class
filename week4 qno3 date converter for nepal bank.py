@@ -20,3 +20,5 @@ def convert_date(date_str, from_cal, to_cal):
         year += 56
     elif from_cal == "BS" and to_cal == "AD":
         year -= 56
+    return f"{year:04d}-{month:02d}-{day:02d}"
+
