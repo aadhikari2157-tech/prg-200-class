@@ -16,5 +16,12 @@ def word_frequency(text):
         key=lambda x: x[1],
         reverse=True
     )
-    
+
+
+    print("Top 3 words:")
+
+    for word, count in sorted_words[:3]:
+        print(f"{word} — {count} times")
+
+
 
