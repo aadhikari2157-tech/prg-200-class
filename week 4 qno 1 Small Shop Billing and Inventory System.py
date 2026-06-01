@@ -10,3 +10,6 @@ cart = {
     "milk": 3,
     "eggs": 12
 }
+
+def process_order(inventory, cart):
+    total = 0
