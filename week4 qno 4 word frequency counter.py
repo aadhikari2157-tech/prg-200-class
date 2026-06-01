@@ -4,4 +4,9 @@ def word_frequency(text):
 
     for ch in ".,!?":
         text = text.replace(ch, "")
+    words = text.split()
+
+    freq = {}
+
     
+
