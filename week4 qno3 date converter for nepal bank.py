@@ -12,3 +12,6 @@ customers = [
 
 def convert_date(date_str, from_cal, to_cal):
     year, month, day = map(int, date_str.split("-"))
+
+    if from_cal == to_cal:
+        return date_str
