@@ -23,5 +23,12 @@ def word_frequency(text):
     for word, count in sorted_words[:3]:
         print(f"{word} — {count} times")
 
+text = """
+Nepal is a beautiful country. Nepal has Mount Everest.
+Everest is the highest mountain in the world. Many tourists
+visit Nepal every year to see Everest and other mountains.
+Nepal is known for its mountains and natural beauty.
+"""
+word_frequency(text)
 
 
