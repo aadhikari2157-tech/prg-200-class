@@ -30,6 +30,9 @@ def atm(account_id, pin, action, amount=0):
             print("Insufficient funds")
 
         else:
-            
+            account["balance"] -= amount
+            print(f"Withdrawal successful.")
+            print(f"Remaining Balance: NPR {account['balance']}")
+
 
 
