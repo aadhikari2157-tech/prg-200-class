@@ -3,3 +3,6 @@ accounts = {
     "A002": {"name": "Sunita Karki", "balance": 8500, "pin": "5678"},
     "A003": {"name": "Bikash Rai", "balance": 22000, "pin": "9012"}
 }
+
+
+def atm(account_id, pin, action, amount=0):
