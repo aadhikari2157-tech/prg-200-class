@@ -21,4 +21,9 @@ def convert_date(date_str, from_cal, to_cal):
     elif from_cal == "BS" and to_cal == "AD":
         year -= 56
     return f"{year:04d}-{month:02d}-{day:02d}"
-
+for customer in customers:
+    converted = convert_date(
+        customer["date"],
+        customer["cal"],
+        customer["need"]
+    )
