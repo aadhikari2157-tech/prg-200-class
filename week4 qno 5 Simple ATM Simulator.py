@@ -11,3 +11,7 @@ def atm(account_id, pin, action, amount=0):
         print("Account not found")
         return
     
+    account = accounts[account_id]
+
+    
+
