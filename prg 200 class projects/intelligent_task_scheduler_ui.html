@@ -1,0 +1,215 @@
+
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: var(--font-sans); }
+.app { display: grid; grid-template-columns: 220px 1fr; grid-template-rows: 52px 1fr; min-height: 620px; background: var(--color-background-tertiary); border: 0.5px solid var(--color-border-tertiary); border-radius: var(--border-radius-lg); overflow: hidden; }
+.topbar { grid-column: 1 / -1; background: var(--color-background-primary); border-bottom: 0.5px solid var(--color-border-tertiary); display: flex; align-items: center; justify-content: space-between; padding: 0 1.25rem; }
+.topbar-left { display: flex; align-items: center; gap: 10px; }
+.logo { font-size: 15px; font-weight: 500; color: var(--color-text-primary); }
+.logo span { color: #185FA5; }
+.topbar-right { display: flex; align-items: center; gap: 10px; }
+.avatar { width: 28px; height: 28px; border-radius: 50%; background: #B5D4F4; display: flex; align-items: center; justify-content: center; font-size: 11px; font-weight: 500; color: #0C447C; }
+.add-btn { background: #185FA5; color: #E6F1FB; border: none; border-radius: var(--border-radius-md); padding: 6px 12px; font-size: 12px; font-weight: 500; cursor: pointer; display: flex; align-items: center; gap: 5px; }
+.sidebar { background: var(--color-background-primary); border-right: 0.5px solid var(--color-border-tertiary); padding: 1rem 0; display: flex; flex-direction: column; gap: 2px; }
+.nav-item { display: flex; align-items: center; gap: 10px; padding: 8px 1rem; font-size: 13px; color: var(--color-text-secondary); cursor: pointer; border-radius: 0; }
+.nav-item.active { background: #E6F1FB; color: #185FA5; font-weight: 500; border-left: 2px solid #185FA5; }
+.nav-item i { font-size: 16px; }
+.nav-section { font-size: 10px; font-weight: 500; color: var(--color-text-tertiary); padding: 12px 1rem 4px; text-transform: uppercase; letter-spacing: 0.06em; }
+.main { padding: 1.25rem; display: flex; flex-direction: column; gap: 1rem; overflow-y: auto; }
+.greeting { font-size: 15px; font-weight: 500; color: var(--color-text-primary); }
+.greeting span { color: var(--color-text-secondary); font-weight: 400; font-size: 13px; margin-left: 6px; }
+.stat-row { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; }
+.stat-card { background: var(--color-background-secondary); border-radius: var(--border-radius-md); padding: 0.75rem 1rem; }
+.stat-label { font-size: 11px; color: var(--color-text-secondary); margin-bottom: 4px; }
+.stat-val { font-size: 22px; font-weight: 500; color: var(--color-text-primary); }
+.stat-sub { font-size: 11px; color: var(--color-text-tertiary); margin-top: 2px; }
+.stat-val.blue { color: #185FA5; }
+.stat-val.red { color: #A32D2D; }
+.stat-val.green { color: #3B6D11; }
+.section-label { font-size: 12px; font-weight: 500; color: var(--color-text-secondary); margin-bottom: 6px; }
+.two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+.panel { background: var(--color-background-primary); border: 0.5px solid var(--color-border-tertiary); border-radius: var(--border-radius-lg); padding: 1rem; }
+.panel-title { font-size: 13px; font-weight: 500; color: var(--color-text-primary); margin-bottom: 0.75rem; display: flex; align-items: center; justify-content: space-between; }
+.panel-title a { font-size: 11px; color: #185FA5; font-weight: 400; cursor: pointer; }
+.task-item { display: flex; align-items: flex-start; gap: 10px; padding: 8px 0; border-bottom: 0.5px solid var(--color-border-tertiary); }
+.task-item:last-child { border-bottom: none; padding-bottom: 0; }
+.priority-dot { width: 8px; height: 8px; border-radius: 50%; margin-top: 5px; flex-shrink: 0; }
+.p-high { background: #E24B4A; }
+.p-med { background: #EF9F27; }
+.p-low { background: #639922; }
+.task-info { flex: 1; min-width: 0; }
+.task-name { font-size: 13px; font-weight: 500; color: var(--color-text-primary); }
+.task-meta { font-size: 11px; color: var(--color-text-secondary); margin-top: 2px; display: flex; gap: 8px; flex-wrap: wrap; }
+.score-badge { font-size: 10px; padding: 2px 7px; border-radius: 10px; background: #E6F1FB; color: #185FA5; font-weight: 500; white-space: nowrap; }
+.score-badge.urgent { background: #FCEBEB; color: #A32D2D; }
+.check-box { width: 16px; height: 16px; border: 0.5px solid var(--color-border-secondary); border-radius: 4px; flex-shrink: 0; margin-top: 2px; cursor: pointer; }
+.rec-box { background: #E6F1FB; border: 0.5px solid #B5D4F4; border-radius: var(--border-radius-lg); padding: 0.85rem 1rem; }
+.rec-label { font-size: 10px; font-weight: 500; color: #185FA5; letter-spacing: 0.05em; text-transform: uppercase; margin-bottom: 4px; }
+.rec-task { font-size: 14px; font-weight: 500; color: #0C447C; }
+.rec-reasons { margin-top: 6px; display: flex; flex-direction: column; gap: 3px; }
+.rec-reason { font-size: 11px; color: #185FA5; display: flex; align-items: center; gap: 5px; }
+.rec-score { margin-top: 8px; font-size: 11px; color: #185FA5; }
+.cal-grid { display: grid; grid-template-columns: repeat(7, 1fr); gap: 3px; }
+.cal-header { font-size: 10px; color: var(--color-text-tertiary); text-align: center; padding: 2px 0; }
+.cal-day { font-size: 11px; text-align: center; padding: 4px 2px; border-radius: 4px; color: var(--color-text-secondary); cursor: pointer; position: relative; }
+.cal-day.has-task::after { content: ''; width: 4px; height: 4px; border-radius: 50%; background: #185FA5; position: absolute; bottom: 1px; left: 50%; transform: translateX(-50%); }
+.cal-day.today { background: #185FA5; color: #E6F1FB; font-weight: 500; border-radius: 50%; }
+.cal-day.deadline { color: #A32D2D; font-weight: 500; }
+.progress-row { display: flex; align-items: center; gap: 8px; margin-bottom: 8px; }
+.prog-label { font-size: 11px; color: var(--color-text-secondary); width: 70px; flex-shrink: 0; }
+.prog-bar-bg { flex: 1; height: 6px; background: var(--color-background-secondary); border-radius: 3px; overflow: hidden; }
+.prog-bar { height: 6px; border-radius: 3px; }
+.prog-pct { font-size: 11px; color: var(--color-text-tertiary); width: 28px; text-align: right; flex-shrink: 0; }
+.tag { font-size: 10px; padding: 2px 7px; border-radius: 10px; font-weight: 500; }
+.tag-study { background: #E1F5EE; color: #0F6E56; }
+.tag-work { background: #E6F1FB; color: #185FA5; }
+.tag-personal { background: #FAEEDA; color: #854F0B; }
+.missed-alert { background: #FCEBEB; border: 0.5px solid #F7C1C1; border-radius: var(--border-radius-md); padding: 8px 10px; display: flex; align-items: center; gap: 8px; }
+.missed-alert i { color: #A32D2D; font-size: 15px; }
+.missed-text { font-size: 12px; color: #A32D2D; }
+.upload-area { border: 0.5px dashed var(--color-border-secondary); border-radius: var(--border-radius-md); padding: 1rem; text-align: center; cursor: pointer; }
+.upload-icon { font-size: 22px; color: var(--color-text-tertiary); display: block; margin-bottom: 4px; }
+.upload-text { font-size: 12px; color: var(--color-text-secondary); }
+.upload-sub { font-size: 10px; color: var(--color-text-tertiary); margin-top: 2px; }
+</style>
+
+<h2 class="sr-only">Intelligent Task Scheduler — Website UI Layout showing dashboard, task list, calendar, and productivity stats</h2>
+
+<div class="app">
+  <div class="topbar">
+    <div class="topbar-left">
+      <i class="ti ti-brain" style="font-size:18px; color:#185FA5;" aria-hidden="true"></i>
+      <span class="logo"><span>Task</span>Scheduler</span>
+    </div>
+    <div class="topbar-right">
+      <i class="ti ti-bell" style="font-size:16px; color:var(--color-text-secondary);" aria-hidden="true"></i>
+      <button class="add-btn"><i class="ti ti-plus" aria-hidden="true"></i> New Task</button>
+      <div class="avatar">AA</div>
+    </div>
+  </div>
+
+  <div class="sidebar">
+    <div class="nav-item active"><i class="ti ti-layout-dashboard" aria-hidden="true"></i> Dashboard</div>
+    <div class="nav-item"><i class="ti ti-checklist" aria-hidden="true"></i> My Tasks</div>
+    <div class="nav-item"><i class="ti ti-calendar" aria-hidden="true"></i> Calendar</div>
+    <div class="nav-item"><i class="ti ti-chart-bar" aria-hidden="true"></i> Productivity</div>
+    <div class="nav-section">Tools</div>
+    <div class="nav-item"><i class="ti ti-upload" aria-hidden="true"></i> Import Document</div>
+    <div class="nav-item"><i class="ti ti-bell" aria-hidden="true"></i> Reminders</div>
+    <div class="nav-item"><i class="ti ti-settings" aria-hidden="true"></i> Settings</div>
+  </div>
+
+  <div class="main">
+    <div>
+      <div class="greeting">Good morning, Amrit <span>Here's your task overview for today.</span></div>
+    </div>
+
+    <div class="missed-alert">
+      <i class="ti ti-alert-circle" aria-hidden="true"></i>
+      <span class="missed-text">You missed <strong>Networking Assignment</strong>. It has been moved to the top of your schedule automatically.</span>
+    </div>
+
+    <div class="stat-row">
+      <div class="stat-card">
+        <div class="stat-label">Tasks Today</div>
+        <div class="stat-val blue">5</div>
+        <div class="stat-sub">2 completed</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-label">Overdue</div>
+        <div class="stat-val red">1</div>
+        <div class="stat-sub">Needs attention</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-label">This Week</div>
+        <div class="stat-val">18</div>
+        <div class="stat-sub">tasks scheduled</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-label">Completion Rate</div>
+        <div class="stat-val green">74%</div>
+        <div class="stat-sub">up from 60%</div>
+      </div>
+    </div>
+
+    <div class="two-col">
+      <div>
+        <div class="panel">
+          <div class="panel-title">Recommended next task <a>why?</a></div>
+          <div class="rec-box">
+            <div class="rec-label"><i class="ti ti-sparkles" style="font-size:12px;" aria-hidden="true"></i> AI suggestion</div>
+            <div class="rec-task">Networking Assignment</div>
+            <div class="rec-reasons">
+              <div class="rec-reason"><i class="ti ti-clock" aria-hidden="true"></i> Deadline in 1 day</div>
+              <div class="rec-reason"><i class="ti ti-flame" aria-hidden="true"></i> High importance</div>
+              <div class="rec-reason"><i class="ti ti-hourglass" aria-hidden="true"></i> Only 2 hours needed</div>
+            </div>
+            <div class="rec-score">Priority score: <strong>-6</strong> (most urgent)</div>
+          </div>
+        </div>
+
+        <div style="margin-top:1rem;">
+          <div class="panel">
+            <div class="panel-title">Priority Queue <a>view all</a></div>
+            <div class="task-item">
+              <div class="check-box"></div>
+              <div class="priority-dot p-high"></div>
+              <div class="task-info">
+                <div class="task-name">Networking Assignment <span class="score-badge urgent">Score: -6</span></div>
+                <div class="task-meta"><span><i class="ti ti-calendar" style="font-size:11px;" aria-hidden="true"></i> Due tomorrow</span><span><i class="ti ti-clock" style="font-size:11px;" aria-hidden="true"></i> 2 hrs</span><span class="tag tag-study">Study</span></div>
+              </div>
+            </div>
+            <div class="task-item">
+              <div class="check-box"></div>
+              <div class="priority-dot p-med"></div>
+              <div class="task-info">
+                <div class="task-name">Club Meeting <span class="score-badge">Score: 3</span></div>
+                <div class="task-meta"><span><i class="ti ti-calendar" style="font-size:11px;" aria-hidden="true"></i> Friday</span><span><i class="ti ti-clock" style="font-size:11px;" aria-hidden="true"></i> 1 hr</span><span class="tag tag-personal">Personal</span></div>
+              </div>
+            </div>
+            <div class="task-item">
+              <div class="check-box"></div>
+              <div class="priority-dot p-high"></div>
+              <div class="task-info">
+                <div class="task-name">Project Report <span class="score-badge">Score: 9</span></div>
+                <div class="task-meta"><span><i class="ti ti-calendar" style="font-size:11px;" aria-hidden="true"></i> Next week</span><span><i class="ti ti-clock" style="font-size:11px;" aria-hidden="true"></i> 5 hrs</span><span class="tag tag-work">Work</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div style="display:flex; flex-direction:column; gap:1rem;">
+        <div class="panel">
+          <div class="panel-title">Calendar — June 2026</div>
+          <div class="cal-grid">
+            <div class="cal-header">Mo</div><div class="cal-header">Tu</div><div class="cal-header">We</div><div class="cal-header">Th</div><div class="cal-header">Fr</div><div class="cal-header">Sa</div><div class="cal-header">Su</div>
+            <div class="cal-day">1</div><div class="cal-day">2</div><div class="cal-day">3</div><div class="cal-day today">4</div><div class="cal-day has-task">5</div><div class="cal-day">6</div><div class="cal-day">7</div>
+            <div class="cal-day deadline has-task">8</div><div class="cal-day">9</div><div class="cal-day has-task">10</div><div class="cal-day">11</div><div class="cal-day has-task">12</div><div class="cal-day">13</div><div class="cal-day">14</div>
+            <div class="cal-day has-task">15</div><div class="cal-day">16</div><div class="cal-day">17</div><div class="cal-day has-task deadline">18</div><div class="cal-day">19</div><div class="cal-day">20</div><div class="cal-day">21</div>
+          </div>
+          <div style="display:flex; gap:12px; margin-top:8px; font-size:10px; color:var(--color-text-tertiary);">
+            <span><span style="color:#185FA5;">●</span> Has tasks</span>
+            <span><span style="color:#A32D2D;">●</span> Deadline</span>
+          </div>
+        </div>
+
+        <div class="panel">
+          <div class="panel-title">Time usage this week</div>
+          <div class="progress-row"><span class="prog-label">Study</span><div class="prog-bar-bg"><div class="prog-bar" style="width:67%; background:#1D9E75;"></div></div><span class="prog-pct">10h</span></div>
+          <div class="progress-row"><span class="prog-label">Work</span><div class="prog-bar-bg"><div class="prog-bar" style="width:100%; background:#185FA5;"></div></div><span class="prog-pct">15h</span></div>
+          <div class="progress-row"><span class="prog-label">Personal</span><div class="prog-bar-bg"><div class="prog-bar" style="width:33%; background:#EF9F27;"></div></div><span class="prog-pct">5h</span></div>
+        </div>
+
+        <div class="panel">
+          <div class="panel-title">Import document</div>
+          <div class="upload-area">
+            <i class="ti ti-file-upload upload-icon" aria-hidden="true"></i>
+            <div class="upload-text">Drop a PDF, DOCX, or TXT file</div>
+            <div class="upload-sub">System will auto-detect deadlines and create tasks</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
