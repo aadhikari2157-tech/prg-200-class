@@ -8,3 +8,16 @@ class Student:
 
     def grade(self):
         avg = self.average()
+
+        if avg >= 80:
+            return "A"
+        elif avg >= 65:
+            return "B"
+        elif avg >= 50:
+            return "C"
+        elif avg >= 40:
+            return "D"
+        else:
+            return "F"
+        
+    
