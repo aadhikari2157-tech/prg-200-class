@@ -22,4 +22,9 @@ class BikeRider(DeliveryPartner):
     def total_earning(self):
         return (80 * self.deliveries) + (5 * self.km_travelled)
     
+class Walker(DeliveryPartner):
+    def __init__(self, name, partner_id, deliveries, rainy_deliveries):
+        super().__init__(name, partner_id, deliveries)
+        self.rainy_deliveries = rainy_deliveries
+
     
