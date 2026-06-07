@@ -28,5 +28,8 @@ accounts_data = [
 
 accounts = {}
 
+for name, acc_no, balance in accounts_data:
+    accounts[acc_no] = BankAccount(name, acc_no, balance)
+
 
 
