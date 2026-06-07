@@ -31,5 +31,8 @@ accounts = {}
 for name, acc_no, balance in accounts_data:
     accounts[acc_no] = BankAccount(name, acc_no, balance)
 
+accounts["A002"].deposit(3000)
+accounts["A003"].withdraw(15000)
+accounts["A001"].withdraw(2000)
 
 
