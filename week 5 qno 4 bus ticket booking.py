@@ -20,3 +20,5 @@ class Bus:
         print("\nPassenger List")
         for seat, name in sorted(self.booked.items()):
             print(f"Seat {seat}: {name}")
+
+bus = Bus("Kathmandu - Pokhara", 10)
