@@ -29,3 +29,10 @@ class Walker(DeliveryPartner):
 
     def total_earning(self):
         return (60 * self.deliveries) + (50 * self.rainy_deliveries)
+    
+class CarDriver(DeliveryPartner):
+    def __init__(self, name, partner_id, deliveries, fuel_cost):
+        super().__init__(name, partner_id, deliveries)
+        self.fuel_cost = fuel_cost
+    
+    
