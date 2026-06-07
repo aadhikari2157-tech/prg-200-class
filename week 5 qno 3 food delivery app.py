@@ -8,3 +8,8 @@ class DeliveryPartner:
     def total_earning(self):
         return 0
     
+    def display(self):
+        print(f"Name: {self.name}")
+        print(f"Deliveries: {self.deliveries}")
+        print(f"Total Earning: NPR {self.total_earning()}")
+        print("-" * 30)
