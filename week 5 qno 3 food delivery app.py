@@ -43,3 +43,7 @@ partners = [
     Walker("Kabita Maharjan", "W-01", 18, 5),
     CarDriver("Roshan KC", "C-01", 20, 850),
 ]
+
+highest = partners[0]
+
+
