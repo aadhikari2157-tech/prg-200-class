@@ -17,3 +17,7 @@ class BankAccount:
             self.balance -= amount
             print(f"NPR {amount} withdrawn from {self.account_number}")
 
+    def get_balance(self):
+        print(f"{self.name} ({self.account_number}) Balance: NPR {self.balance}")
+
+
