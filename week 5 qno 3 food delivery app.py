@@ -35,4 +35,5 @@ class CarDriver(DeliveryPartner):
         super().__init__(name, partner_id, deliveries)
         self.fuel_cost = fuel_cost
     
-    
+    def total_earning(self):
+        return (120 * self.deliveries) - self.fuel_cost
