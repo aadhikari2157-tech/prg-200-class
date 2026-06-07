@@ -46,4 +46,7 @@ partners = [
 
 highest = partners[0]
 
+for partner in partners:
+    partner.display()
 
+    
