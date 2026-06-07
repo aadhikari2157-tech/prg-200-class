@@ -22,3 +22,11 @@ class Bus:
             print(f"Seat {seat}: {name}")
 
 bus = Bus("Kathmandu - Pokhara", 10)
+
+bookings = [
+    (3, "Ramila Shrestha"),
+    (7, "Deepak Gurung"),
+    (3, "Anita Rai"),
+    (1, "Prakash Magar"),
+    (7, "Suman Tamang"),
+]
