@@ -16,4 +16,7 @@ class Bus:
     def available_seats(self):
         return self.total_seats - len(self.booked)
     
-    
+    def passenger_list(self):
+        print("\nPassenger List")
+        for seat, name in sorted(self.booked.items()):
+            print(f"Seat {seat}: {name}")
