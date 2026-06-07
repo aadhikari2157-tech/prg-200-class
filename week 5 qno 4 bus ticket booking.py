@@ -33,3 +33,8 @@ bookings = [
 
 for seat, name in bookings:
     bus.book_seat(seat, name)
+
+print(f"\nAvailable Seats: {bus.available_seats()}")
+
+bus.passenger_list()
+
