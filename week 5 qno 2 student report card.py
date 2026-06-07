@@ -20,4 +20,6 @@ class Student:
         else:
             return "F"
         
-    
+    def display(self):
+        avg = self.average()
+        status = "Pass" if avg >= 40 else "Fail"
