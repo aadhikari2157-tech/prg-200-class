@@ -26,4 +26,7 @@ accounts_data = [
     ("Bikash Rai", "A003", 12000),
 ]
 
+accounts = {}
+
+
 
