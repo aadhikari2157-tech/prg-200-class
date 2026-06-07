@@ -3,4 +3,10 @@ class BankAccount:
         self.name = name
         self.account_number = account_number
         self.balance = balance
+
+
+    def deposit(self, amount):
+        self.balance += amount
+        print(f"NPR {amount} deposited into {self.account_number}")
         
+
