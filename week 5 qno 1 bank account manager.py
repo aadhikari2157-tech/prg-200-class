@@ -35,4 +35,7 @@ accounts["A002"].deposit(3000)
 accounts["A003"].withdraw(15000)
 accounts["A001"].withdraw(2000)
 
+print("\nFinal Balances:")
+for account in accounts.values():
+    account.get_balance()
 
