@@ -37,3 +37,9 @@ class CarDriver(DeliveryPartner):
     
     def total_earning(self):
         return (120 * self.deliveries) - self.fuel_cost
+
+partners = [
+    BikeRider("Santosh Rai", "B-01", 15, 42),
+    Walker("Kabita Maharjan", "W-01", 18, 5),
+    CarDriver("Roshan KC", "C-01", 20, 850),
+]
