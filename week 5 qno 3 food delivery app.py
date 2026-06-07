@@ -49,4 +49,6 @@ highest = partners[0]
 for partner in partners:
     partner.display()
 
-    
+    if partner.total_earning() > highest.total_earning():
+        highest = partner
+
