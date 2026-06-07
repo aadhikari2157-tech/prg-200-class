@@ -30,3 +30,6 @@ bookings = [
     (1, "Prakash Magar"),
     (7, "Suman Tamang"),
 ]
+
+for seat, name in bookings:
+    bus.book_seat(seat, name)
