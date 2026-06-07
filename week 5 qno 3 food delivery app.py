@@ -27,4 +27,5 @@ class Walker(DeliveryPartner):
         super().__init__(name, partner_id, deliveries)
         self.rainy_deliveries = rainy_deliveries
 
-    
+    def total_earning(self):
+        return (60 * self.deliveries) + (50 * self.rainy_deliveries)
