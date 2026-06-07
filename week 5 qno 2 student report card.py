@@ -37,3 +37,8 @@ students = [
     ("Priya", [90, 88, 95, 92, 87]),
 ]
 
+for name, marks in students:
+    student = Student(name, marks)
+    student.display()
+
+    
