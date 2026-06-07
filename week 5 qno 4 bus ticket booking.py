@@ -13,4 +13,7 @@ class Bus:
             self.booked[seat_number] = passenger_name
             print(f"Seat {seat_number} booked for {passenger_name}")
 
-            
+    def available_seats(self):
+        return self.total_seats - len(self.booked)
+    
+    
