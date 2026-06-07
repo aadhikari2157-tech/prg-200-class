@@ -23,3 +23,9 @@ class Student:
     def display(self):
         avg = self.average()
         status = "Pass" if avg >= 40 else "Fail"
+
+        print(f"Name: {self.name}")
+        print(f"Average: {avg:.2f}")
+        print(f"Grade: {self.grade()}")
+        print(f"Result: {status}")
+        print("-" * 30)
