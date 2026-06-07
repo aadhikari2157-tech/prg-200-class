@@ -19,4 +19,7 @@ class BikeRider(DeliveryPartner):
         super().__init__(name, partner_id, deliveries)
         self.km_travelled = km_travelled
 
-        
+    def total_earning(self):
+        return (80 * self.deliveries) + (5 * self.km_travelled)
+    
+    
