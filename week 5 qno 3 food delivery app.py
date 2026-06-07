@@ -52,3 +52,5 @@ for partner in partners:
     if partner.total_earning() > highest.total_earning():
         highest = partner
 
+print("Highest Earner:")
+print(f"{highest.name} - NPR {highest.total_earning()}")
