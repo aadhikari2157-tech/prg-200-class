@@ -20,4 +20,10 @@ class BankAccount:
     def get_balance(self):
         print(f"{self.name} ({self.account_number}) Balance: NPR {self.balance}")
 
+accounts_data = [
+    ("Ramesh Thapa", "A001", 5000),
+    ("Sunita Karki", "A002", 0),
+    ("Bikash Rai", "A003", 12000),
+]
+
 
