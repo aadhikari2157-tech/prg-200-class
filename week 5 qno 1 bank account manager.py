@@ -8,5 +8,9 @@ class BankAccount:
     def deposit(self, amount):
         self.balance += amount
         print(f"NPR {amount} deposited into {self.account_number}")
-        
+
+
+    def withdraw(self, amount):
+        if amount > self.balance:
+            print("Insufficient funds")
 
