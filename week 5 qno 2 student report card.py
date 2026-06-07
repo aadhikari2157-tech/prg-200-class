@@ -29,3 +29,11 @@ class Student:
         print(f"Grade: {self.grade()}")
         print(f"Result: {status}")
         print("-" * 30)
+
+students = [
+    ("Aarav", [78, 85, 60, 90, 72]),
+    ("Sita", [45, 50, 38, 60, 55]),
+    ("Bishal", [30, 25, 40, 35, 28]),
+    ("Priya", [90, 88, 95, 92, 87]),
+]
+
