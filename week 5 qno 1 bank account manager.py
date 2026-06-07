@@ -13,4 +13,7 @@ class BankAccount:
     def withdraw(self, amount):
         if amount > self.balance:
             print("Insufficient funds")
+        else:
+            self.balance -= amount
+            print(f"NPR {amount} withdrawn from {self.account_number}")
 
