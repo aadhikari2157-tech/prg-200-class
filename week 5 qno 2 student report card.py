@@ -5,3 +5,6 @@ class Student:
 
     def average(self):
         return sum(self.marks) / len(self.marks)
+
+    def grade(self):
+        avg = self.average()
