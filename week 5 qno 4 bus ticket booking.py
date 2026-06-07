@@ -10,4 +10,7 @@ class Bus:
             print("Seat already booked")
 
         else:
+            self.booked[seat_number] = passenger_name
+            print(f"Seat {seat_number} booked for {passenger_name}")
+
             
